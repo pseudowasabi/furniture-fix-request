@@ -7,6 +7,7 @@ public class FurnitureFixRequest {
     private String email;
     private String name;
 
-    private String type;
-    private String details;
+    private String furnitureType;
+    private String manufacturer;
+    private String requestDetails;
 }

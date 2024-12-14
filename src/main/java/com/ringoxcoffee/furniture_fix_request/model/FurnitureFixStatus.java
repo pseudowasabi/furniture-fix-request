@@ -1,27 +1,39 @@
 package com.ringoxcoffee.furniture_fix_request.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
-public class FurnitureFixStatus implements Serializable {
+@Builder
+@Data
+@EntityListeners(AuditingEntityListener.class)
+public class FurnitureFixStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String requestId;
+
     private String email;
     private String name;
 
-    private String type;
-    private String details;
+    private String furnitureType;
+    private String manufacturer;
+    private String requestDetails;
 
     private String status;
     private String adminMessage;
 
-    private String lastUpdates;
+    @CreatedDate
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime lastModifiedDate;
 }
