@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class ReceiptFurnitureFixService {
+public class SubmitFurnitureFixService {
 
     public FurnitureFixResponse process(FurnitureFixRequest furnitureFixRequest, String requestId) {
 
