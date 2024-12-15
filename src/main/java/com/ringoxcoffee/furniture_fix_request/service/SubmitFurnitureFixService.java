@@ -3,6 +3,7 @@ package com.ringoxcoffee.furniture_fix_request.service;
 import com.ringoxcoffee.furniture_fix_request.dto.request.FurnitureFixRequest;
 import com.ringoxcoffee.furniture_fix_request.dto.response.FurnitureFixResponse;
 import com.ringoxcoffee.furniture_fix_request.model.FurnitureFixStatus;
+import com.ringoxcoffee.furniture_fix_request.model.FurnitureFixStatusId;
 import com.ringoxcoffee.furniture_fix_request.repository.FurnitureFixStatusRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,18 @@ public class SubmitFurnitureFixService {
 
     public SubmitFurnitureFixService(FurnitureFixStatusRepository furnitureFixStatusRepository) {
         this.furnitureFixStatusRepository = furnitureFixStatusRepository;
+    }
+
+
+    public void saveIfNotExists(FurnitureFixStatus furnitureFixStatus) {
+        if (furnitureFixStatusRepository.existsById(
+                FurnitureFixStatusId.builder()
+                        .requestId(furnitureFixStatus.getRequestId())
+                        .build()
+        )) {
+            throw new IllegalArgumentException(String.format("Entity with ID %s already exists.", furnitureFixStatus.getRequestId()));
+        }
+        furnitureFixStatusRepository.save(furnitureFixStatus);
     }
 
     public FurnitureFixResponse process(FurnitureFixRequest furnitureFixRequest, String requestId) {
@@ -31,7 +44,7 @@ public class SubmitFurnitureFixService {
                 .status("SUBMIT")
                 .build();
 
-        furnitureFixStatusRepository.save(furnitureFixStatus);
+        this.saveIfNotExists(furnitureFixStatus);
 
         return FurnitureFixResponse.builder()
                 .status("submit completed")

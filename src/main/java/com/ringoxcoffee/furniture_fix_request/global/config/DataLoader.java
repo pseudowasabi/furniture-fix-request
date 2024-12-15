@@ -1,4 +1,4 @@
-package com.ringoxcoffee.furniture_fix_request.config;
+package com.ringoxcoffee.furniture_fix_request.global.config;
 
 import com.ringoxcoffee.furniture_fix_request.model.Furniture;
 import com.ringoxcoffee.furniture_fix_request.model.Manufacturer;

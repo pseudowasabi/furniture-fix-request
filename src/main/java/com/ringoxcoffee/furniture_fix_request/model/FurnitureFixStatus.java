@@ -1,8 +1,10 @@
 package com.ringoxcoffee.furniture_fix_request.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -13,12 +15,12 @@ import java.time.LocalDateTime;
 @Builder
 @Data
 @EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor
+@AllArgsConstructor
+@IdClass(FurnitureFixStatusId.class)
 public class FurnitureFixStatus {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String requestId;
 
     private String email;
