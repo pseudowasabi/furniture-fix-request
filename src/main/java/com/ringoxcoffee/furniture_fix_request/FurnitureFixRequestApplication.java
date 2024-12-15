@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class FurnitureFixReqeustApplication {
+public class FurnitureFixRequestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FurnitureFixReqeustApplication.class, args);
+		SpringApplication.run(FurnitureFixRequestApplication.class, args);
 	}
 
 }
