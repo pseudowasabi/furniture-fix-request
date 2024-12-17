@@ -9,7 +9,6 @@ import com.ringoxcoffee.furniture_fix_request.dto.response.InquiryRequestsByManu
 import com.ringoxcoffee.furniture_fix_request.service.ChangeStatusByOriginalRequestIdService;
 import com.ringoxcoffee.furniture_fix_request.service.InquiryFurnitureFixRequestsByManufacturerService;
 import com.ringoxcoffee.furniture_fix_request.service.SubmitFurnitureFixService;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

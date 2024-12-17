@@ -1,8 +1,8 @@
-package com.ringoxcoffee.furniture_fix_request.repository;
+package com.ringoxcoffee.furniture_fix_request.repository.jpa;
 
-import com.ringoxcoffee.furniture_fix_request.model.FurnitureFixStatus;
-import com.ringoxcoffee.furniture_fix_request.model.FurnitureFixStatusId;
-import com.ringoxcoffee.furniture_fix_request.model.FurnitureFixStatusProjection;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatus;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatusId;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatusProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

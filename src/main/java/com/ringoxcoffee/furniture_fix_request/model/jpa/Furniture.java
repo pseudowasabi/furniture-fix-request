@@ -1,4 +1,4 @@
-package com.ringoxcoffee.furniture_fix_request.model;
+package com.ringoxcoffee.furniture_fix_request.model.jpa;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,14 +7,17 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@IdClass(ManufacturerId.class)
+@IdClass(FurnitureId.class)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Manufacturer {
+public class Furniture {
+
+    @Id
+    private String furnitureType;
 
     @Id
     private String manufacturer;
 
-    private String hqLocation;
-    private String serviceCenterContact;
+    private Integer stock;
+    private Integer supportPeriod;
 }

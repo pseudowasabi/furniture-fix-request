@@ -2,9 +2,9 @@ package com.ringoxcoffee.furniture_fix_request.service;
 
 import com.ringoxcoffee.furniture_fix_request.dto.request.FurnitureFixRequest;
 import com.ringoxcoffee.furniture_fix_request.dto.response.FurnitureFixResponse;
-import com.ringoxcoffee.furniture_fix_request.model.FurnitureFixStatus;
-import com.ringoxcoffee.furniture_fix_request.model.FurnitureFixStatusId;
-import com.ringoxcoffee.furniture_fix_request.repository.FurnitureFixStatusRepository;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatus;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatusId;
+import com.ringoxcoffee.furniture_fix_request.repository.jpa.FurnitureFixStatusRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

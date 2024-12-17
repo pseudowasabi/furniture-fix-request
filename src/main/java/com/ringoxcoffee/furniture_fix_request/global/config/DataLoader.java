@@ -1,9 +1,9 @@
 package com.ringoxcoffee.furniture_fix_request.global.config;
 
-import com.ringoxcoffee.furniture_fix_request.model.Furniture;
-import com.ringoxcoffee.furniture_fix_request.model.Manufacturer;
-import com.ringoxcoffee.furniture_fix_request.repository.FurnitureRepository;
-import com.ringoxcoffee.furniture_fix_request.repository.ManufacturerRepository;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.Furniture;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.Manufacturer;
+import com.ringoxcoffee.furniture_fix_request.repository.jpa.FurnitureRepository;
+import com.ringoxcoffee.furniture_fix_request.repository.jpa.ManufacturerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

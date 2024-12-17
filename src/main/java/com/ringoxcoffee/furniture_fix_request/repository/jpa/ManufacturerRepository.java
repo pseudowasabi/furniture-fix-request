@@ -1,7 +1,7 @@
-package com.ringoxcoffee.furniture_fix_request.repository;
+package com.ringoxcoffee.furniture_fix_request.repository.jpa;
 
-import com.ringoxcoffee.furniture_fix_request.model.Manufacturer;
-import com.ringoxcoffee.furniture_fix_request.model.ManufacturerId;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.Manufacturer;
+import com.ringoxcoffee.furniture_fix_request.model.jpa.ManufacturerId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

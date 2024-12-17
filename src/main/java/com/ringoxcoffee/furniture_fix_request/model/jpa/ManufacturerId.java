@@ -1,4 +1,4 @@
-package com.ringoxcoffee.furniture_fix_request.model;
+package com.ringoxcoffee.furniture_fix_request.model.jpa;
 
 import java.io.Serializable;
 
