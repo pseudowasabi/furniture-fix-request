@@ -4,6 +4,7 @@ import com.ringoxcoffee.furniture_fix_request.dto.request.FurnitureFixRequest;
 import com.ringoxcoffee.furniture_fix_request.dto.response.FurnitureFixResponse;
 import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatus;
 import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatusId;
+import com.ringoxcoffee.furniture_fix_request.repository.jdbc.FurnitureFixStatusJdbcRepository;
 import com.ringoxcoffee.furniture_fix_request.repository.jpa.FurnitureFixStatusRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,12 @@ public class SubmitFurnitureFixService {
 
     private final FurnitureFixStatusRepository furnitureFixStatusRepository;
 
-    public SubmitFurnitureFixService(FurnitureFixStatusRepository furnitureFixStatusRepository) {
+    private final FurnitureFixStatusJdbcRepository furnitureFixStatusJdbcRepository;
+
+    public SubmitFurnitureFixService(FurnitureFixStatusRepository furnitureFixStatusRepository,
+                                     FurnitureFixStatusJdbcRepository furnitureFixStatusJdbcRepository) {
         this.furnitureFixStatusRepository = furnitureFixStatusRepository;
+        this.furnitureFixStatusJdbcRepository = furnitureFixStatusJdbcRepository;
     }
 
 

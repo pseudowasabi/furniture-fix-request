@@ -1,16 +1,16 @@
-package com.ringoxcoffee.furniture_fix_request.repository.jpa;
+package com.ringoxcoffee.furniture_fix_request.repository.jdbc;
 
+import com.ringoxcoffee.furniture_fix_request.model.jdbc.FurnitureFixStatusJdbcTable;
+import com.ringoxcoffee.furniture_fix_request.model.jdbc.FurnitureFixStatusSelectResult;
 import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatus;
-import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatusId;
-import com.ringoxcoffee.furniture_fix_request.model.jpa.FurnitureFixStatusProjection;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jdbc.repository.query.Modifying;
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface FurnitureFixStatusRepository extends JpaRepository<FurnitureFixStatus, FurnitureFixStatusId> {
+public interface FurnitureFixStatusJdbcRepository extends CrudRepository<FurnitureFixStatusJdbcTable, Long> {
 
     @Query(value = """
             select
@@ -25,19 +25,25 @@ public interface FurnitureFixStatusRepository extends JpaRepository<FurnitureFix
             left join manufacturer c
               on a.manufacturer = c.manufacturer
             where a.manufacturer = :manufacturer
-            """, nativeQuery = true)
-    List<FurnitureFixStatusProjection> getFixStatusOfSpecificManufacturer(
+            """)
+    List<FurnitureFixStatusSelectResult> getFixStatusOfSpecificManufacturer(
             @Param("manufacturer") String manufacturer
     );
 
-    List<FurnitureFixStatus> findByManufacturer(String manufacturer);
+    @Query(value = """
+            select * from furniture_fix_status
+            where manufacturer = :manufacturer
+            """)
+    List<FurnitureFixStatus> findByManufacturer(
+            @Param("manufacturer") String manufacturer
+    );
 
     @Modifying
     @Query(value = """
             update furniture_fix_status
             set status = :status
             where request_id = :original_request_id
-            """, nativeQuery = true)
+            """)
     int updateStatus(
             @Param("original_request_id") String originalRequestId,
             @Param("status") String status
