@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ringoxcoffee</groupId>
-	<artifactId>furniture-fix-request</artifactId>
+	<artifactId>spring-data-access-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>furniture-fix-request</name>
-	<description>etude00/furniture-fix-request: try various database access methods</description>
+	<name>spring-data-access-examples</name>
+	<description>spring-data-access-examples</description>
 	<url/>
 	<licenses>
 		<license/>
